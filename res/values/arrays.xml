@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cfg_region">
+        <item>United State / Canada</item>
+        <item>Europe (ETSI EN 302 208)</item>
+        <item>Europe (ETSI EN 300 220)</item><item>Taiwan</item>
+        <item>China</item>
+        <item>South Korea</item>
+        <item>Australia / New Zealand</item>
+        
+        <item>Brazil</item>
+        <item>Israel</item>
+        <item>India</item>
+        <item>Custom</item>
+    </string-array>
+    
+    <string-array name="cfg_selected_flag">
+        <item>All</item>
+        <item>Deasserted</item>
+        <item>Asserted</item>
+    </string-array><string-array name="cfg_session">
+        <item>S0</item>
+        <item>S1</item>
+        <item>S2</item>
+        <item>S3</item>
+    </string-array><string-array name="cfg_target">
+        <item>A</item>
+        <item>B</item>
+    </string-array><string-array name="cfg_link_profiles">
+        <item>Profile 0</item>
+        <item>Profile 1</item>
+        <item>Profile 2</item>
+        <item>profile 3</item>
+    </string-array>
+    
+    <string-array name="cfg_coding">
+        <item>FM0</item>
+        <item>Miller 2</item>
+        <item>Miller 4</item>
+        <item>Miller 8</item>
+    </string-array>
+    <string-array name="cfg_q_algorithm">
+        <item >Fixed Q</item>
+        <item >Dynamic Q</item>
+    </string-array>
+    <string-array name="access_type">
+        <item >Read</item>
+        <item >Write</item>
+        <item >Kill</item>
+        <item >Lock</item>
+    </string-array>
+    <string-array name="memory_bank">
+        <item >Reserved</item>
+        <item >EPC</item>
+        <item >TID</item>
+        <item >User</item>
+    </string-array>
+    <string-array name="password_permission">
+        <item >Accessible</item>
+        <item >Always Accessible</item>
+        <item >Password Accessible</item>
+        <item >Always Not Accessible</item>
+        <item >No Change</item>
+    </string-array>
+    <string-array name="memory_bank_permission">
+        <item >Writeable</item>
+        <item >Always Writeable</item>
+        <item >Password Writeable</item>
+        <item >Always Not Writeable</item>
+        <item >No Change</item>
+    </string-array>
+    
+    
+</resources>

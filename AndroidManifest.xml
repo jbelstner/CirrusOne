@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.encinitaslabs.wirfid.hpreader"
+      android:versionCode="58"
+      android:versionName="@string/about_sw_ver_sum" android:installLocation="auto">
+    <uses-sdk android:minSdkVersion="16" />
+    <uses-feature android:name="android.hardware.usb.host"></uses-feature>
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/> 
+    
+    <application android:label="@string/app_name"
+        android:icon="@drawable/cirrus_one"
+        android:name="com.encinitaslabs.wirfid.hpreader.UsbCommunication"
+        android:largeHeap="true" android:debuggable="false">
+        <activity android:name="com.encinitaslabs.wirfid.hpreader.RfidContainer"
+                  android:label="@string/app_name"
+                  android:launchMode="singleTop"
+                  android:screenOrientation="fullSensor"
+                  android:windowSoftInputMode="adjustResize"
+                  android:multiprocess="false">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+			<intent-filter>
+                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
+                <action android:name="android.hardware.usb.action.USB_DEVICE_DETACHED" />
+				<action android:name="android.intent.action.BOOT_COMPLETED" />
+			</intent-filter>
+            <meta-data android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
+                android:resource="@xml/device_filter"/>
+        </activity>
+        <service android:name="ReaderService" />
+    </application>
+</manifest>

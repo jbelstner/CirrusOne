@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:key="cfg_root"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:skd="http://schemas.android.com/apk/res/com.encinitaslabs.wirfid.hpreader">
+
+	<Preference android:key="cfg_title"
+	    android:selectable="false"
+		android:layout="@layout/pref_title">
+	</Preference>
+	
+	<ListPreference android:title="@string/cfg_region"
+	    android:key="cfg_region"
+	    android:entryValues="@array/cfg_region"
+	    android:entries="@array/cfg_region"
+	    android:dialogTitle="@string/cfg_dlg_region_title"
+	    android:defaultValue="United State / Canada">
+	</ListPreference>
+	
+	<PreferenceCategory android:key="cfg_rf_conf"
+	    android:title="@string/cfg_rf_conf">
+	    <com.encinitaslabs.wirfid.hpreader.SeekBarPreference android:key="cfg_pwr_level"
+	        android:title="@string/cfg_pwr_level"
+	        android:dialogTitle="@string/cfg_pwr_level" 
+	        android:persistent="true"
+	        android:defaultValue="30"
+	        skd:maxValue="30"
+	        skd:minValue="10">
+	    </com.encinitaslabs.wirfid.hpreader.SeekBarPreference>
+	    <EditTextPreference android:key="cfg_dwell_time"
+	        android:title="@string/cfg_dwell_time"
+	        android:dialogTitle="@string/cfg_dwell_time"
+	        android:hint="Enter scan time between 0 to 10000"
+	        android:maxLength="5"
+	        android:inputType="number"
+	        android:digits="0123456789"
+	        android:defaultValue="1000">
+		</EditTextPreference>
+		<EditTextPreference android:key="cfg_number_inventory_cycles"
+		    android:title="@string/cfg_number_inventory_cycles"
+		    android:dialogTitle="@string/cfg_number_inventory_cycles"
+		    android:hint="Enter inventory cycles between 0 to 10000"
+		    android:maxLength="5"
+	        android:inputType="number"
+	        android:digits="0123456789"
+	        android:defaultValue="0">
+		</EditTextPreference>
+	    <EditTextPreference android:key="cfg_antenna_port"
+	        android:title="@string/cfg_antenna_port"
+	        android:dialogTitle="@string/cfg_antenna_port"
+	        android:hint="Enter port number, 0 or 1"
+	        android:maxLength="1"
+	        android:inputType="number"
+	        android:digits="0123456789"
+	        android:defaultValue="0">
+		</EditTextPreference>
+	</PreferenceCategory>
+	
+	<PreferenceCategory android:key="cfg_gen2"
+	    android:title="@string/cfg_gen2">
+		<ListPreference android:entryValues="@array/cfg_link_profiles"
+		    android:title="@string/cfg_link_profile"
+		    android:dialogTitle="@string/cfg_link_profile"
+		    android:entries="@array/cfg_link_profiles"
+		    android:key="cfg_link_profile"
+		    android:defaultValue="Profile 1">
+		</ListPreference>
+		<ListPreference android:entries="@array/cfg_selected_flag"
+		    android:entryValues="@array/cfg_selected_flag"
+		    android:dialogTitle="@string/cfg_selected_flag"
+		    android:key="cfg_selected_flag"
+		    android:title="@string/cfg_selected_flag"
+		    android:defaultValue="All">
+		</ListPreference>
+		<ListPreference android:entries="@array/cfg_session"
+		    android:entryValues="@array/cfg_session"
+		    android:key="cfg_session"
+		    android:title="@string/cfg_session"
+		    android:dialogTitle="@string/cfg_session"
+		    android:defaultValue="S2">
+		</ListPreference>
+		<ListPreference android:entries="@array/cfg_target"
+		    android:key="cfg_target"
+		    android:entryValues="@array/cfg_target"
+		    android:title="@string/cfg_target"
+		    android:dialogTitle="@string/cfg_target"
+		    android:defaultValue="B">
+		</ListPreference>
+	</PreferenceCategory>
+				
+	<PreferenceCategory android:key="cfg_singulation_algorithm"
+		android:title="@string/cfg_singulation_algorithm">
+		<!-- ListPreference android:entryValues="@array/cfg_q_algorithm"
+		    android:title="@string/cfg_q_algorithm"
+		    android:dialogTitle="@string/cfg_q_algorithm"
+		    android:entries="@array/cfg_q_algorithm"
+		    android:key="cfg_q_algorithm"
+		    android:defaultValue="Fixed Q">
+		</ListPreference -->
+	    <com.encinitaslabs.wirfid.hpreader.SeekBarPreference android:key="cfg_q_value"
+	        android:title="@string/cfg_q_value"
+	        android:dialogTitle="@string/cfg_q_value" 
+	        android:persistent="true"
+	        android:defaultValue="4"
+	        skd:maxValue="15"
+	        skd:minValue="0">
+	    </com.encinitaslabs.wirfid.hpreader.SeekBarPreference>
+	    <EditTextPreference android:key="cfg_fixed_retry_count"
+	        android:dialogTitle="@string/cfg_retry_count"
+		    android:title="@string/cfg_retry_count"
+	        android:hint="Enter retry count between 0 to 255"
+	        android:maxLength="3"
+	        android:inputType="number"
+	        android:digits="0123456789"
+	        android:defaultValue="0">
+		</EditTextPreference>
+	    <CheckBoxPreference android:key="cfg_fixed_toggle_target"
+		    android:title="@string/cfg_toggle_target" android:defaultValue="false">
+		</CheckBoxPreference>
+		<CheckBoxPreference android:key="cfg_repeat_until_no_tages"
+		    android:title="@string/cfg_repeat_until_no_tags" android:defaultValue="false">
+		</CheckBoxPreference>
+	</PreferenceCategory>
+			
+	<!-- PreferenceCategory android:key="cfg_dynamic_q"
+	    android:title="@string/cfg_dynamic_q">
+	    <com.encinitaslabs.wirfid.hpreader.SeekBarPreference android:key="cfg_start_qvalue"
+	        android:title="@string/cfg_start_qvalue"
+	        android:dialogTitle="@string/cfg_start_qvalue" 
+	        android:persistent="true"
+	        android:defaultValue="0"
+	        skd:maxValue="15"
+	        skd:minValue="0">
+	    </com.encinitaslabs.wirfid.hpreader.SeekBarPreference>
+	    <com.encinitaslabs.wirfid.hpreader.SeekBarPreference android:key="cfg_min_qvalue"
+	        android:title="@string/cfg_min_qvalue"
+	        android:dialogTitle="@string/cfg_min_qvalue" 
+	        android:persistent="true"
+	        android:defaultValue="0"
+	        skd:maxValue="15"
+	        skd:minValue="0">
+	    </com.encinitaslabs.wirfid.hpreader.SeekBarPreference>
+	    <com.encinitaslabs.wirfid.hpreader.SeekBarPreference android:key="cfg_max_qvalue"
+	        android:title="@string/cfg_max_qvalue"
+	        android:dialogTitle="@string/cfg_max_qvalue" 
+	        android:persistent="true"
+	        android:defaultValue="0"
+	        skd:maxValue="15"
+	        skd:minValue="0">
+	    </com.encinitaslabs.wirfid.hpreader.SeekBarPreference>
+		<EditTextPreference android:key="cfg_dynamic_retry_count" 
+	        android:dialogTitle="@string/cfg_retry_count"
+	        android:title="@string/cfg_retry_count"
+	        android:hint="Enter retry count between 0 to 255"
+	        android:maxLength="3"
+	        android:inputType="number"
+	        android:digits="0123456789"
+	        android:defaultValue="0">
+		</EditTextPreference>
+		<CheckBoxPreference android:key="cfg_dynamic_toggle_target"
+	        android:title="@string/cfg_toggle_target"
+	        android:defaultValue="false">
+	    </CheckBoxPreference>
+	    <com.encinitaslabs.wirfid.hpreader.SeekBarPreference android:key="cfg_threshold_multiplier"
+	        android:title="@string/cfg_threshold_multiplier"
+	        android:dialogTitle="@string/cfg_threshold_multiplier" 
+	        android:persistent="true"
+	        android:defaultValue="0"
+	        skd:maxValue="255"
+	        skd:minValue="0">
+	    </com.encinitaslabs.wirfid.hpreader.SeekBarPreference>
+	</PreferenceCategory -->
+
+	<PreferenceCategory android:key="cfg_misc"
+	    android:title="@string/cfg_misc">
+	    <EditTextPreference android:key="cfg_interval_delay"
+	        android:title="@string/cfg_interval_delay"
+	        android:dialogTitle="@string/cfg_interval_delay"
+	        android:hint="Enter time between scans, 0 to 10000"
+	        android:maxLength="5"
+	        android:inputType="number"
+	        android:digits="0123456789"
+	        android:defaultValue="1000">
+		</EditTextPreference>
+	    <EditTextPreference android:key="cfg_ping_delay"
+	        android:title="@string/cfg_ping_delay"
+	        android:dialogTitle="@string/cfg_ping_delay"
+	        android:hint="Enter time between pings, 1 to 999"
+	        android:maxLength="3"
+	        android:inputType="number"
+	        android:digits="0123456789"
+	        android:defaultValue="30">
+		</EditTextPreference>
+		<EditTextPreference android:key="cfg_web_url"
+		    android:dialogTitle="@string/cfg_web_url"
+		    android:title="@string/cfg_web_url" 
+		    android:inputType="textUri"/>
+		<EditTextPreference android:key="cfg_wss_url"
+		    android:dialogTitle="@string/cfg_wss_url"
+		    android:title="@string/cfg_wss_url" 
+		    android:inputType="textUri"/>
+	    <CheckBoxPreference android:key="cfg_bluetooth_control"
+		    android:title="@string/cfg_bluetooth_control" android:defaultValue="false">
+		</CheckBoxPreference>
+	    <CheckBoxPreference android:key="cfg_localsocket_control"
+		    android:title="@string/cfg_localsocket_control" android:defaultValue="true">
+		</CheckBoxPreference>
+	    	    <CheckBoxPreference android:key="cfg_scan_autostart"
+		    android:title="@string/cfg_scan_autostart" android:defaultValue="true">
+		</CheckBoxPreference>
+	</PreferenceCategory>
+</PreferenceScreen>
